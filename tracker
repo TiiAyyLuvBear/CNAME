@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Video Tracker</title>
+  <script>
+    // Tạo một function để lắng nghe sự thay đổi URL
+    window.addEventListener('load', function() {
+      setInterval(function() {
+        var currentUrl = window.location.href;
+        // Gửi message đến Web Viewer
+        window.parent.postMessage(currentUrl, "*");
+      }, 1000);
+    });
+  </script>
+</head>
+<body>
+  <!-- Nhúng YouTube -->
+  <iframe id="youtubeFrame" width="560" height="315" src="https://www.youtube.com" frameborder="0" allowfullscreen></iframe>
+</body>
+</html>
